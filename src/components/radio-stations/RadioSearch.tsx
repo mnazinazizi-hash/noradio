@@ -93,7 +93,7 @@ export default function RadioSearch() {
 
       genre: station.genre,
 
-      codec: "Unknown",
+      codec: "MP3",
 
     });
 

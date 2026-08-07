@@ -1,9 +1,21 @@
-export type KenyanStation = {
-  id: string;
+export interface Station {
+  id?: string;
+
+  // Radio Browser API fields
+  stationuuid?: string;
   name: string;
-  logo: string;
-  streamUrl: string;
-  homepage: string;
-  genre: string;
+  url: string;
+  url_resolved?: string;
+  homepage?: string;
+  favicon?: string;
+
   country?: string;
-};
+  state?: string;
+  language?: string;
+  tags?: string;
+
+  codec?: "MP3" | "AAC" | "Unknown";
+
+  votes?: number;
+  clickcount?: number;
+}
