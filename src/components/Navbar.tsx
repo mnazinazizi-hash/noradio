@@ -7,7 +7,7 @@ import { useState } from "react";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/radio-stations", label: "Radio Stations" },
-  { href: "/daily-reminders", label: "Daily Reminders" },
+  { href: "/daily-reminders", label: "Daily Word" },
 ];
 
 export default function Navbar() {
