@@ -1,9 +1,10 @@
 "use client";
 
 import { useRadio } from "@/components/RadioProvider";
+import type { KenyanStation } from "@/lib/kenyanStations";
 
 type StationCardProps = {
-  station: any;
+  station: KenyanStation;
 };
 
 
@@ -33,7 +34,7 @@ export default function StationCard({
       logo: station.logo,
       streamUrl: station.streamUrl,
       homepage: station.homepage,
-      codec: station.codec || "AAC",
+      codec: "AAC",
     });
 
   }

@@ -14,9 +14,9 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "NoRadio — Personal Affirmation Radio Hub",
+  title: "NoRadio",
   description:
-    "A calm-tech sanctuary for reflection, affirmations, and uplifting radio. Find your center.",
+    "A personal radio statio with daily reminders.",
 };
 
 export default function RootLayout({
@@ -32,7 +32,10 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-full flex flex-col font-body-md bg-background text-on-background">
+      <body
+        suppressHydrationWarning
+        className="min-h-full flex flex-col font-body-md bg-background text-on-background"
+      >
         <RadioProvider>
           <Navbar />
           <main className="flex-grow">{children}</main>

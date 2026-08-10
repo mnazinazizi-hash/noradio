@@ -1,5 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 
+type RadioBrowserStation = {
+  stationuuid?: string;
+  name?: string;
+  favicon?: string;
+  url?: string;
+  url_resolved?: string;
+  homepage?: string;
+  tags?: string;
+  country?: string;
+};
 
 export async function GET(
   request: NextRequest
@@ -45,21 +55,20 @@ export async function GET(
     }
 
 
-    const stations =
-      await response.json();
+    const stations = (await response.json()) as RadioBrowserStation[];
 
 
 
     const formatted =
       stations.map(
-        (station:any)=>({
+        (station) => ({
 
           id:
           station.stationuuid,
 
 
           name:
-          station.name,
+          station.name || "Unnamed station",
 
 
           logo:

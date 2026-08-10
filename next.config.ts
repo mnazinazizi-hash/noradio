@@ -47,6 +47,38 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "static.ntvkenya.co.ke",
       },
+      {
+        protocol: "https",
+        hostname: "i1.sndcdn.com",
+      },
+      {
+        protocol: "https",
+        hostname: "www.musicinafrica.net",
+      },
+      {
+        protocol: "https",
+        hostname: "proxy.zeno.fm",
+      },
+      {
+        protocol: "https",
+        hostname: "afripods-data.s3.amazonaws.com",
+      },
+      {
+        protocol: "https",
+        hostname: "radio.co.ke",
+      },
+      {
+        protocol: "https",
+        hostname: "images.zeno.fm",
+      },
+      {
+        protocol: "https",
+        hostname: "zeno.fm",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.instant.audio",
+      },
     ],
   },
 };

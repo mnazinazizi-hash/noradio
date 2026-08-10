@@ -45,6 +45,8 @@ export function RadioProvider({ children }: { children: ReactNode }) {
 
   const playStation = useCallback(
     async (station: FavoriteStation) => {
+      if (!station.streamUrl) return;
+
       const audio = ensureAudio();
 
       setActiveStation(station);
@@ -84,11 +86,16 @@ export function RadioProvider({ children }: { children: ReactNode }) {
       const currentIndex = favoriteStations.findIndex(
         (station) => station.id === activeStation.id,
       );
-      const nextIndex =
-        (currentIndex + direction + favoriteStations.length) %
-        favoriteStations.length;
-
-      await playStation(favoriteStations[nextIndex]);
+      for (let offset = 1; offset <= favoriteStations.length; offset += 1) {
+        const nextIndex =
+          (currentIndex + direction * offset + favoriteStations.length) %
+          favoriteStations.length;
+        const nextStation = favoriteStations[nextIndex];
+        if (nextStation.streamUrl) {
+          await playStation(nextStation);
+          return;
+        }
+      }
     },
     [activeStation.id, playStation],
   );

@@ -1,7 +1,8 @@
 import StationCard from "./StationCard";
+import type { KenyanStation } from "@/lib/kenyanStations";
 
 type StationGridProps = {
-  stations: any[];
+  stations: KenyanStation[];
 };
 
 export default function StationGrid({
